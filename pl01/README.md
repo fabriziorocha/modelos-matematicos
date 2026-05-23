@@ -48,7 +48,7 @@ A solução ótima estará em um dos vértices da região viável.
 
 ### Gráfico da solução
 
-![alt text](image.png)
+![grafico](pl01.jpg)
 
 ### Resultado
 
