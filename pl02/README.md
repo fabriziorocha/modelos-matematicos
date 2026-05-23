@@ -11,8 +11,7 @@ capacidade de produção em algumas secções da fábrica, que a administração
 | Tornos     | 350           |
 | Furadoras  | 150           |
 
-O número de horas necessárias, em cada secção, para produzir uma unidade de cada um
-dos produtos apresenta-se na seguinte tabela:
+O número de horas necessárias, em cada secção, para produzir uma unidade de cada um dos produtos apresenta-se na seguinte tabela:
 
 | Secção     |  P1  |  P2  |  P3  |
 |:-----------|:----:|:----:|:----:|
@@ -28,7 +27,12 @@ Formule este problema, como um problema de programação linear de modo a determ
 
 ### Apresentação dos dados
 
-...
+| Secção     |  P1  |  P2  |  P3  |Disp. (h/sem) |
+
+|:-----------|:----:|:----:|:----:|-------------:|
+| Frezadoras | 9    | 3    | 5    | 500          |
+| Tornos     | 5    | 4    | 0    | 350          |
+| Furadoras  | 3    | 0    | 2    | 150          |
 
 ### Variáveis de decisão
 
