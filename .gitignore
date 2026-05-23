@@ -1,5 +1,6 @@
-/.venv
-/.vscode
+.venv
+.vscode
+.settings
 /image.png
 /mm1.md
 /mm10.md

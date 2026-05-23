@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <description>PL01</description>
+    	
+    <configs>
+        		
+        <config default="true" name="default" category="opl">
+            			
+            <ref name="f-pl01.mod" type="model">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
