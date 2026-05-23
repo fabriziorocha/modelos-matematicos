@@ -28,7 +28,7 @@ $x_m$ = número de motoretas produzidas
 
 $$
 \begin{aligned}
-\operatorname{Max}\ \mathbb{Z}=30x_b + 40x_m
+\text{Max}\ \mathbb{Z}=30x_b + 40x_m
 \end{aligned}
 $$
 
