@@ -13,6 +13,7 @@
 // variáveis de decisão, restrições e a função objectivo. 
 
 int plank_demand[1..2] = [50, 25];
+int plank_size[1..2] = [22, 20];
 
 int pattern[1..4][1..3] = [
 	[3, 0, 4],
@@ -23,16 +24,16 @@ int pattern[1..4][1..3] = [
 
 dvar int+ use_pattern[1..4];
 
-//minimize sum(i in 1..4) ( 
-//	use_pattern[i] * pattern[i][3] 
-//	+ ( (use_pattern[i] * pattern[i][1]) - plank_demand[1] ) 
-//	+ ( (use_pattern[i] * pattern[i][2]) - plank_demand[2] ) 
-//);
+dexpr int n_plank22 = 
+	sum(i in 1..4) use_pattern[i] * pattern[i][1];
+
+dexpr int n_plank20 = 
+	sum(i in 1..4) use_pattern[i] * pattern[i][2];
 
 minimize 
 	sum(i in 1..4) use_pattern[i] * pattern[i][3] 
-	+ sum(i in 1..4) (use_pattern[i] * pattern[i][1]) - plank_demand[1] 
-	+ sum(i in 1..4) (use_pattern[i] * pattern[i][2]) - plank_demand[2];
+	+ ( n_plank22 - plank_demand[1] ) * plank_size[1]
+	+ ( n_plank20 - plank_demand[2] ) * plank_size[2];
 
 subject to {
   
@@ -48,14 +49,14 @@ execute {
   var p20 = 0;
   var res = 0
   
-  for (var i = 1; i <=4; i++) {
+  for (var i = 1; i <= 4; i++) {
     
     p22 += use_pattern[i] * pattern[i][1];
     p20 += use_pattern[i] * pattern[i][2];
     res += use_pattern[i] * pattern[i][3];
     
   }
-  writeln("-- Desperdicio: ", res + ((p22 - plank_demand[1]) * 22) + ((p20 - plank_demand[2]) * 20));
+  writeln("-- Desperdicio: ", res + ((p22 - plank_demand[1]) * plank_size[1]) + ((p20 - plank_demand[2]) * plank_size[2]));
   writeln("-- Pranchas com 22 cm: ", p22);
   writeln("-- Pranchas com 20 cm: ", p20);
   writeln();
